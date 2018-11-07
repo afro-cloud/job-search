@@ -1,0 +1,19 @@
+{
+  "name": "job-search",
+  "version": "1.0.0",
+  "description": "Package to find jobs relevant to your input.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "Claudio Herrera",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^1.10.0"
+  }
+}
