@@ -1,0 +1,1 @@
+const isValidNumber = num => typeof num === 'number' || !isNaN(num);

@@ -1,7 +1,9 @@
 {
   "name": "job-search",
   "version": "1.0.0",
-  "description": "Package to find jobs relevant to your input.",
+  "description": "CLI that shows you the jobs you want without manually doing it yourself.",
+  "preferGlobal": true,
+  "bin": "./index.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -14,6 +16,8 @@
   "author": "Claudio Herrera",
   "license": "ISC",
   "dependencies": {
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.0",
     "puppeteer": "^1.10.0"
   }
 }

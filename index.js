@@ -1,50 +1,26 @@
-const puppeteer = require('puppeteer');
-const clearInput = require('./src/clearInput.js');
-const VIEWPORT = { width: 1440, height: 877 };
+#!/usr/bin/env node
 
-const queryParams = {
-  minSalary: 'minSalary=',
-  fromAge: 'fromAge=',
-  radius: 'radius='
+const program = require('commander');
+const { prompt } = require('inquirer');
+const handleGlassdoor = require('./src/glassdoor');
+const { GD_QUESTIONS } = require('./src/constants');
+
+const cli = () => {
+  program
+    .version('1.0.0')
+    .description(
+      'CLI that shows you the jobs you want without manually doing it yourself'
+    );
+
+  program
+    .command('glassdoor')
+    .alias('g')
+    .description('Search glassdoor jobs')
+    .action(() => {
+      prompt(GD_QUESTIONS).then(answers => handleGlassdoor(answers));
+    });
+
+  program.parse(process.argv);
 };
 
-const restrictions = {
-  minSalary: ['numericValidation'],
-  fromAge: ['ageValidation'],
-  radius: ['numericValidation']
-};
-
-const main = async () => {
-  const browser = await puppeteer.launch({
-    headless: false,
-    args: ['--start-fullscreen']
-  });
-  const page = await browser.newPage();
-  await page.setViewport(VIEWPORT);
-  await page.goto('https://www.glassdoor.com');
-
-  await processHomePage(page);
-
-  await page.waitForNavigation();
-  await page.goto(`${page.url()}&fromAge=1`);
-};
-
-const processHomePage = async page => {
-  const searchInput = await page.$('#KeywordSearch');
-  const locationInput = await page.$('#LocationSearch');
-
-  // Show search form.
-  await searchInput.click();
-  await searchInput.focus();
-  await searchInput.type('Software Engineer');
-
-  await locationInput.click();
-  await locationInput.focus();
-
-  await clearInput(locationInput);
-  await locationInput.type('Santa Monica, CA');
-
-  await page.click('#HeroSearchButton');
-};
-
-main();
+cli();
