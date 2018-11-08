@@ -6,7 +6,7 @@ const {
   GD_DAY_MAP,
   GD_DISTANCE_MAP,
 } = require('./constants');
-const { colorRed } = require('./utils');
+const { logAndExit } = require('./utils');
 
 const processHomePage = async (inp) => {
   const {
@@ -48,9 +48,7 @@ const handleGlassdoor = async (answers) => {
       }&minSalary=${minSalary}`,
     );
   } catch (e) {
-    // eslint-disable-next-line no-console
-    console.log(colorRed('Whoops something went wrong. Please try again.'));
-    process.exit(0);
+    logAndExit('Whoops something went wrong. Please try again.');
   }
 };
 

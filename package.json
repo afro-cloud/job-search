@@ -11,13 +11,20 @@
   "scripts": {
     "start": "node index.js",
     "pretest": "eslint --ignore-path .gitignore .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "node",
     "javascript"
   ],
   "author": "Claudio Herrera",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesuperhomie/job-search"
+  },
+  "bugs": {
+    "url": "https://github.com/thesuperhomie/job-search/issues"
+  },
   "license": "ISC",
   "dependencies": {
     "colors": "^1.3.2",

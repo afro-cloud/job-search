@@ -1,6 +1,6 @@
 # job-search
 
-A CLI for searching for jobs. Follow the prompt to find your next new gig. This application takes advatange of `pupeteer` to automate loading up your next job search.
+A CLI for searching jobs. Follow the prompt to find your next new gig! This CLI takes advatange of `pupeteer` to automate loading up your next job search.
 
 ## Getting Started
 
