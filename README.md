@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/thesuperhomie/job-search.svg?branch=master)](https://travis-ci.org/thesuperhomie/job-search)
+
 # job-search
 
 A CLI for searching jobs. Follow the prompt to find your next new gig! This CLI takes advatange of `pupeteer` to automate loading up your next job search.
