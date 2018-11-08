@@ -1,12 +1,16 @@
 {
   "name": "job-search",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "CLI that shows you the jobs you want without manually doing it yourself.",
+  "engines": {
+    "node": ">=8.9.4"
+  },
   "preferGlobal": true,
   "bin": "./index.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "pretest": "eslint --ignore-path .gitignore .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,8 +20,18 @@
   "author": "Claudio Herrera",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.3.2",
     "commander": "^2.19.0",
     "inquirer": "^6.2.0",
     "puppeteer": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.0.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0"
   }
 }

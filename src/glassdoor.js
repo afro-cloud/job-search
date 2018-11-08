@@ -1,15 +1,17 @@
-const puppeteer = require('puppeteer');
-const clearInput = require('./clearInput.js');
-const { DEFAULT_VIEWPORT, GD_URL } = require('./constants');
+const initializeBrowser = require('./browser');
+const clearInput = require('./pageUtils');
+const {
+  DEFAULT_VIEWPORT,
+  GD_URL,
+  GD_DAY_MAP,
+  GD_DISTANCE_MAP,
+} = require('./constants');
+const { colorRed } = require('./utils');
 
-const queryParams = {
-  minSalary: 'minSalary=',
-  fromAge: 'fromAge=',
-  radius: 'radius='
-};
-
-const processHomePage = async inp => {
-  const { job, location, page } = inp;
+const processHomePage = async (inp) => {
+  const {
+    job, location, page,
+  } = inp;
   const searchInput = await page.$('#KeywordSearch');
   const locationInput = await page.$('#LocationSearch');
 
@@ -26,12 +28,11 @@ const processHomePage = async inp => {
   await page.click('#HeroSearchButton');
 };
 
-const handleGlassdoor = async answers => {
-  const browser = await puppeteer.launch({
-    headless: false,
-    args: ['--start-fullscreen']
-  });
-  const { job, location, lastUpdated } = answers;
+const handleGlassdoor = async (answers) => {
+  const browser = await initializeBrowser();
+  const {
+    job, location, lastUpdated, distance, minSalary,
+  } = answers;
   const page = await browser.newPage();
   await page.setViewport(DEFAULT_VIEWPORT);
   await page.goto(GD_URL);
@@ -39,7 +40,18 @@ const handleGlassdoor = async answers => {
   await processHomePage({ page, job, location });
 
   await page.waitForNavigation();
-  await page.goto(`${page.url()}&fromAge=${lastUpdated}`);
+
+  try {
+    await page.goto(
+      `${page.url()}&fromAge=${GD_DAY_MAP[lastUpdated]}&radius=${
+        GD_DISTANCE_MAP[distance]
+      }&minSalary=${minSalary}`,
+    );
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.log(colorRed('Whoops something went wrong. Please try again.'));
+    process.exit(0);
+  }
 };
 
 module.exports = handleGlassdoor;

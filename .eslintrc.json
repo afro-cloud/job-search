@@ -1,0 +1,12 @@
+{
+  "extends": "eslint-config-airbnb",
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+
+  "env": {
+    "es6": true,
+    "jest/globals": true
+  },
+  "plugins": ["jest"]
+}
