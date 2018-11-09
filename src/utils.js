@@ -11,6 +11,14 @@ const logAndExit = (msg) => {
   process.exit();
 };
 
+const wrapWithCatch = (action, message) => {
+  try {
+    action();
+  } catch (e) {
+    logAndExit(message);
+  }
+};
+
 const exitIfNotPresent = (item, collection) => {
   if (!collection[item]) {
     logError(`${item} is not a valid input. Please try again.`);
@@ -27,7 +35,7 @@ module.exports = {
   colorRed,
   colorGreen,
   logError,
-  logAndExit,
+  wrapWithCatch,
   exitIfNotPresent,
   isValidSalary,
 };

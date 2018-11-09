@@ -3,13 +3,15 @@
 const program = require('commander');
 const { prompt } = require('inquirer');
 const handleGlassdoor = require('./src/glassdoor');
-const { GD_QUESTIONS } = require('./src/constants');
+const handleLinkedin = require('./src/linkedin');
+const { GD_QUESTIONS, DEFAULT_QUESTIONS } = require('./src/constants');
 const { colorGreen } = require('./src/utils');
 
 const cli = () => {
   program
     .version('0.0.1')
     .option('-g, --glassdoor', 'Search for jobs with Glassdoor')
+    .option('-l, --linkedin', 'Search for jobs with LinkedIn')
     .description(
       'CLI for searching jobs. Open a new search in the browser with ease.',
     );
@@ -25,6 +27,14 @@ const cli = () => {
     .description('Search glassdoor jobs')
     .action(() => {
       prompt(GD_QUESTIONS).then(answers => handleGlassdoor(answers));
+    });
+
+  program
+    .command('linkedin')
+    .alias('l')
+    .description('Search linkedin jobs')
+    .action(() => {
+      prompt(DEFAULT_QUESTIONS).then(answers => handleLinkedin(answers));
     });
 
   program.parse(process.argv);
