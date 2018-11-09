@@ -10,7 +10,7 @@ const {
 } = require('./constants');
 const { logAndExit } = require('./utils');
 
-const handleGlassdoor = async (answers) => {
+const handleLinkedin = async (answers) => {
   const browser = await initializeBrowser();
   const {
     job,
@@ -35,4 +35,4 @@ const handleGlassdoor = async (answers) => {
   await page.click(LINKEDIN_SEARCH_SELECTOR);
 };
 
-module.exports = handleGlassdoor;
+module.exports = handleLinkedin;
