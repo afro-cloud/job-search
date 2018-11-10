@@ -74,6 +74,25 @@ const LINKEDIN_JOB_SELECTOR = '#keyword-search-box';
 const LINKEDIN_LOCATION_SELECTOR = '#location-search-box';
 const LINKEDIN_SEARCH_SELECTOR = '.job-home-search-button';
 
+const ALL_SITES = {
+  glassdoor: {
+    url: GD_URL,
+    JOB_SELECTOR: GD_JOB_SELECTOR,
+    LOCATION_SELECTOR: GD_LOCATION_SELECTOR,
+    SEARCH_SELECTOR: GD_SEARCH_SELECTOR,
+  },
+  linkedin: {
+    url: LINKEDIN_URL,
+    JOB_SELECTOR: LINKEDIN_JOB_SELECTOR,
+    LOCATION_SELECTOR: LINKEDIN_LOCATION_SELECTOR,
+    SEARCH_SELECTOR: LINKEDIN_SEARCH_SELECTOR,
+  },
+};
+
+const SITES_NEED_CLEAR = {
+  glassdoor: { needsClear: true },
+};
+
 module.exports = {
   DEFAULT_VIEWPORT,
   DEFAULT_JOB,
@@ -91,4 +110,6 @@ module.exports = {
   GD_JOB_SELECTOR,
   GD_LOCATION_SELECTOR,
   GD_SEARCH_SELECTOR,
+  ALL_SITES,
+  SITES_NEED_CLEAR,
 };

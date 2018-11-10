@@ -31,18 +31,18 @@ Make sure that you have Node 8.x or later installed. See instructions [here](htt
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/thesuperhomie/job-search/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/thesuperhomie/job-search/tags). 
 
 ## Authors
 
-* **Claudio Herrera** - *Initial work and active maintainer* - [thesuperhomie](https://github.com/thesuperhomie)
+* **Claudio Herrera** - *Creator and active maintainer* - [thesuperhomie](https://github.com/thesuperhomie)
 
 ### Special Thanks
-[PurpleBooth](https://gist.github.com/PurpleBooth) - Great contributing template it's great!
+[PurpleBooth](https://gist.github.com/PurpleBooth) - Great contributing template!
 
 ## License
 

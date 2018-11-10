@@ -1,6 +1,15 @@
+const { DEFAULT_VIEWPORT } = require('./constants');
+
 const clearInput = async (input) => {
   await input.click({ clickCount: 3 });
   await input.press('Backspace');
+};
+
+const createPage = async ({ browser, url }) => {
+  const page = await browser.newPage();
+  await page.setViewport(DEFAULT_VIEWPORT);
+  await page.goto(url);
+  return page;
 };
 
 const processHomePage = async ({
@@ -30,5 +39,6 @@ const processHomePage = async ({
 
 module.exports = {
   clearInput,
+  createPage,
   processHomePage,
 };
