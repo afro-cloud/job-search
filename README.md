@@ -4,6 +4,8 @@
 
 A CLI for searching jobs. Follow the prompt to find your next new gig! This CLI takes advatange of `pupeteer` to automate loading up your next job search.
 
+![Example](.github/job-search-example.gif)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -31,7 +33,7 @@ Make sure that you have Node 8.x or later installed. See instructions [here](htt
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/thesuperhomie/job-search/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/thesuperhomie/job-search/blob/master/.github/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 

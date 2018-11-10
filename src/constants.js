@@ -86,17 +86,17 @@ const MTR_JOB_SELECTOR = '#q2';
 const MTR_LOCATION_SELECTOR = '#where2';
 const MTR_SEARCH_SELECTOR = '#doQuickSearch2';
 
-// indeed - IND
-const IND_URL = 'https://www.indeed.com/';
-const IND_JOB_SELECTOR = '#text-input-what';
-const IND_LOCATION_SELECTOR = '#text-input-where';
-const IND_SEARCH_SELECTOR = '#whatWhere > form > div.icl-WhatWhere-buttonWrapper > button';
-
 // dice - DICE
 const DICE_URL = 'https://www.dice.com/';
 const DICE_JOB_SELECTOR = '#search-field-keyword';
 const DICE_LOCATION_SELECTOR = '#search-field-location';
 const DICE_SEARCH_SELECTOR = '#findTechJobs';
+
+// stackoverflow - SOF
+const SOF_URL = 'https://stackoverflow.com/jobs';
+const SOF_JOB_SELECTOR = '#q';
+const SOF_LOCATION_SELECTOR = '#l';
+const SOF_SEARCH_SELECTOR = '#job-search-form > div.cols > div.-col._right.search-controls.d-inline > div';
 
 const ALL_SITES = {
   glassdoor: {
@@ -123,24 +123,23 @@ const ALL_SITES = {
     LOCATION_SELECTOR: MTR_LOCATION_SELECTOR,
     SEARCH_SELECTOR: MTR_SEARCH_SELECTOR,
   },
-  indeed: {
-    url: IND_URL,
-    JOB_SELECTOR: IND_JOB_SELECTOR,
-    LOCATION_SELECTOR: IND_LOCATION_SELECTOR,
-    SEARCH_SELECTOR: IND_SEARCH_SELECTOR,
-  },
   dice: {
     url: DICE_URL,
     JOB_SELECTOR: DICE_JOB_SELECTOR,
     LOCATION_SELECTOR: DICE_LOCATION_SELECTOR,
     SEARCH_SELECTOR: DICE_SEARCH_SELECTOR,
   },
+  stackoverflow: {
+    url: SOF_URL,
+    JOB_SELECTOR: SOF_JOB_SELECTOR,
+    LOCATION_SELECTOR: SOF_LOCATION_SELECTOR,
+    SEARCH_SELECTOR: SOF_SEARCH_SELECTOR,
+  },
 };
 
 const SITES_NEED_CLEAR = {
   glassdoor: { needsClear: true },
   ziprecruiter: { needsClear: true },
-  indeed: { needsClear: true },
   dice: { needsClear: true },
 };
 
@@ -171,12 +170,12 @@ module.exports = {
   MTR_JOB_SELECTOR,
   MTR_LOCATION_SELECTOR,
   MTR_SEARCH_SELECTOR,
-  IND_URL,
-  IND_JOB_SELECTOR,
-  IND_LOCATION_SELECTOR,
-  IND_SEARCH_SELECTOR,
   DICE_URL,
   DICE_JOB_SELECTOR,
   DICE_LOCATION_SELECTOR,
   DICE_SEARCH_SELECTOR,
+  SOF_URL,
+  SOF_JOB_SELECTOR,
+  SOF_LOCATION_SELECTOR,
+  SOF_SEARCH_SELECTOR,
 };

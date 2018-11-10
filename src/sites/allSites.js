@@ -9,26 +9,8 @@ const handleAllSites = async (answers) => {
     job,
     location,
   } = answers;
-  const sites = Object.keys(ALL_SITES);
-  const [first, ...otherSites] = sites;
-  const page = await createPage({ browser, url: ALL_SITES[`${first}`].url });
 
-  try {
-    await processHomePage({
-      page,
-      job,
-      location,
-      jobSelector: ALL_SITES[`${first}`].JOB_SELECTOR,
-      locationSelector: ALL_SITES[`${first}`].LOCATION_SELECTOR,
-      needsClear: SITES_NEED_CLEAR[first] || false,
-    });
-  } catch (e) {
-    logError(`Something went wrong while processing ${first}. Please try again.`);
-  }
-
-  await page.click(ALL_SITES[`${first}`].SEARCH_SELECTOR);
-
-  otherSites.forEach(async (site) => {
+  Object.keys(ALL_SITES).forEach(async (site) => {
     const {
       url,
       JOB_SELECTOR,
@@ -44,7 +26,7 @@ const handleAllSites = async (answers) => {
         location,
         jobSelector: JOB_SELECTOR,
         locationSelector: LOCATION_SELECTOR,
-        needsClear: SITES_NEED_CLEAR[first] || false,
+        needsClear: SITES_NEED_CLEAR[site] || false,
       });
       await next.click(SEARCH_SELECTOR);
     } catch (e) {
