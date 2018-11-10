@@ -1,5 +1,5 @@
-const initializeBrowser = require('./browser');
-const { processHomePage } = require('./pageUtils');
+const initializeBrowser = require('../browser');
+const { processHomePage } = require('../pageUtils');
 const {
   DEFAULT_VIEWPORT,
   GD_URL,
@@ -9,8 +9,8 @@ const {
   GD_JOB_SELECTOR,
   GD_LOCATION_SELECTOR,
   GD_SEARCH_SELECTOR,
-} = require('./constants');
-const { logAndExit, wrapWithCatch } = require('./utils');
+} = require('../constants');
+const { logAndExit, wrapWithCatch } = require('../utils');
 
 const handleGlassdoor = async (answers) => {
   const browser = await initializeBrowser();

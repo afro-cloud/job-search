@@ -1,7 +1,7 @@
-const initializeBrowser = require('./browser');
-const { createPage, processHomePage } = require('./pageUtils');
-const { ALL_SITES, SITES_NEED_CLEAR } = require('./constants');
-const { logError } = require('./utils');
+const initializeBrowser = require('../browser');
+const { createPage, processHomePage } = require('../pageUtils');
+const { ALL_SITES, SITES_NEED_CLEAR } = require('../constants');
+const { logError } = require('../utils');
 
 const handleAllSites = async (answers) => {
   const browser = await initializeBrowser();
@@ -36,6 +36,7 @@ const handleAllSites = async (answers) => {
       SEARCH_SELECTOR,
     } = ALL_SITES[`${site}`];
     const next = await createPage({ browser, url });
+
     try {
       await processHomePage({
         page: next,
@@ -47,7 +48,7 @@ const handleAllSites = async (answers) => {
       });
       await next.click(SEARCH_SELECTOR);
     } catch (e) {
-      logError(`Something went wrong while processing ${site}. Please try again.`);
+      logError(`Something went wrong while processing ${site}. Please try again.\nMessage: ${e.message}`);
     }
   });
 };

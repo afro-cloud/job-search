@@ -18,7 +18,7 @@ const DEFAULT_QUESTIONS = [
   },
 ];
 
-// glassdoor
+// glassdoor - GD
 const GD_URL = 'https://www.glassdoor.com';
 const GD_QUESTIONS = [
   ...DEFAULT_QUESTIONS,
@@ -68,11 +68,35 @@ const GD_JOB_SELECTOR = '#KeywordSearch';
 const GD_LOCATION_SELECTOR = '#LocationSearch';
 const GD_SEARCH_SELECTOR = '#HeroSearchButton';
 
-// linkedin
+// linkedin - LINKEDIN
 const LINKEDIN_URL = 'https://www.linkedin.com/jobs/';
 const LINKEDIN_JOB_SELECTOR = '#keyword-search-box';
 const LINKEDIN_LOCATION_SELECTOR = '#location-search-box';
 const LINKEDIN_SEARCH_SELECTOR = '.job-home-search-button';
+
+// zip recruiter - ZIP
+const ZIP_URL = 'https://www.ziprecruiter.com/';
+const ZIP_JOB_SELECTOR = '#search1';
+const ZIP_LOCATION_SELECTOR = '#location1';
+const ZIP_SEARCH_SELECTOR = '.submit';
+
+// monster - MTR
+const MTR_URL = 'https://www.monster.com/';
+const MTR_JOB_SELECTOR = '#q2';
+const MTR_LOCATION_SELECTOR = '#where2';
+const MTR_SEARCH_SELECTOR = '#doQuickSearch2';
+
+// indeed - IND
+const IND_URL = 'https://www.indeed.com/';
+const IND_JOB_SELECTOR = '#text-input-what';
+const IND_LOCATION_SELECTOR = '#text-input-where';
+const IND_SEARCH_SELECTOR = '#whatWhere > form > div.icl-WhatWhere-buttonWrapper > button';
+
+// dice - DICE
+const DICE_URL = 'https://www.dice.com/';
+const DICE_JOB_SELECTOR = '#search-field-keyword';
+const DICE_LOCATION_SELECTOR = '#search-field-location';
+const DICE_SEARCH_SELECTOR = '#findTechJobs';
 
 const ALL_SITES = {
   glassdoor: {
@@ -87,10 +111,37 @@ const ALL_SITES = {
     LOCATION_SELECTOR: LINKEDIN_LOCATION_SELECTOR,
     SEARCH_SELECTOR: LINKEDIN_SEARCH_SELECTOR,
   },
+  ziprecruiter: {
+    url: ZIP_URL,
+    JOB_SELECTOR: ZIP_JOB_SELECTOR,
+    LOCATION_SELECTOR: ZIP_LOCATION_SELECTOR,
+    SEARCH_SELECTOR: ZIP_SEARCH_SELECTOR,
+  },
+  monster: {
+    url: MTR_URL,
+    JOB_SELECTOR: MTR_JOB_SELECTOR,
+    LOCATION_SELECTOR: MTR_LOCATION_SELECTOR,
+    SEARCH_SELECTOR: MTR_SEARCH_SELECTOR,
+  },
+  indeed: {
+    url: IND_URL,
+    JOB_SELECTOR: IND_JOB_SELECTOR,
+    LOCATION_SELECTOR: IND_LOCATION_SELECTOR,
+    SEARCH_SELECTOR: IND_SEARCH_SELECTOR,
+  },
+  dice: {
+    url: DICE_URL,
+    JOB_SELECTOR: DICE_JOB_SELECTOR,
+    LOCATION_SELECTOR: DICE_LOCATION_SELECTOR,
+    SEARCH_SELECTOR: DICE_SEARCH_SELECTOR,
+  },
 };
 
 const SITES_NEED_CLEAR = {
   glassdoor: { needsClear: true },
+  ziprecruiter: { needsClear: true },
+  indeed: { needsClear: true },
+  dice: { needsClear: true },
 };
 
 module.exports = {
@@ -112,4 +163,20 @@ module.exports = {
   GD_SEARCH_SELECTOR,
   ALL_SITES,
   SITES_NEED_CLEAR,
+  ZIP_URL,
+  ZIP_JOB_SELECTOR,
+  ZIP_LOCATION_SELECTOR,
+  ZIP_SEARCH_SELECTOR,
+  MTR_URL,
+  MTR_JOB_SELECTOR,
+  MTR_LOCATION_SELECTOR,
+  MTR_SEARCH_SELECTOR,
+  IND_URL,
+  IND_JOB_SELECTOR,
+  IND_LOCATION_SELECTOR,
+  IND_SEARCH_SELECTOR,
+  DICE_URL,
+  DICE_JOB_SELECTOR,
+  DICE_LOCATION_SELECTOR,
+  DICE_SEARCH_SELECTOR,
 };

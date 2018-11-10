@@ -2,9 +2,9 @@
 
 const program = require('commander');
 const { prompt } = require('inquirer');
-const handleGlassdoor = require('./src/glassdoor');
-const handleLinkedin = require('./src/linkedin');
-const handleAllSites = require('./src/allSites');
+const handleGlassdoor = require('./src/sites/glassdoor');
+const handleLinkedin = require('./src/sites/linkedin');
+const handleAllSites = require('./src/sites/allSites');
 const { GD_QUESTIONS, DEFAULT_QUESTIONS } = require('./src/constants');
 const { colorGreen } = require('./src/utils');
 

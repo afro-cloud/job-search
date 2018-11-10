@@ -1,5 +1,5 @@
-const initializeBrowser = require('./browser');
-const { processHomePage } = require('./pageUtils');
+const initializeBrowser = require('../browser');
+const { processHomePage } = require('../pageUtils');
 const {
   DEFAULT_VIEWPORT,
   LINKEDIN_URL,
@@ -7,8 +7,8 @@ const {
   LINKEDIN_JOB_SELECTOR,
   LINKEDIN_LOCATION_SELECTOR,
   LINKEDIN_SEARCH_SELECTOR,
-} = require('./constants');
-const { logAndExit } = require('./utils');
+} = require('../constants');
+const { logAndExit } = require('../utils');
 
 const handleLinkedin = async (answers) => {
   const browser = await initializeBrowser();
