@@ -18,6 +18,7 @@ Make sure that you have Node 8.x or later installed. See instructions [here](htt
 
 1. Install job-search globally so you can use the CLI anywhere with a command line
 * `$ npm i -g job-search`
+* *If you're having permission issues creating a Chromium directory try*: `$ sudo npm install -g job-search --unsafe-perm=true --allow-root`
 2. Start using job-search
 * `$ job-search`
 
